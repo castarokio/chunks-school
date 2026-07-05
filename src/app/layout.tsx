@@ -1,37 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Toaster } from "@/components/ui/toaster";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Z.ai Code Scaffold - AI-Powered Development",
-  description: "Modern Next.js scaffold optimized for AI-powered development with Z.ai. Built with TypeScript, Tailwind CSS, and shadcn/ui.",
-  keywords: ["Z.ai", "Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui", "AI development", "React"],
-  authors: [{ name: "Z.ai Team" }],
+  title: "Champs School - تشامبس سكول | منصة تعليمية متقدمة",
+  description:
+    "منصة تعليمية متقدمة تجمع بين التكنولوجيا الحديثة وأساليب التعلم المبتكرة. An advanced educational platform combining modern technology and innovative learning methods. Plateforme éducative avancée combinant technologie moderne et méthodes d'apprentissage innovantes.",
+  keywords: [
+    "Champs School",
+    "تشامبس سكول",
+    "تعليم",
+    "education",
+    "الجزائر",
+    "Algeria",
+    "لغات",
+    "languages",
+    "دورات",
+    "courses",
+    "تعلم الكتروني",
+    "e-learning",
+  ],
+  authors: [{ name: "Champs School" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/champs-logo.png",
   },
   openGraph: {
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
-    url: "https://chat.z.ai",
-    siteName: "Z.ai",
+    title: "Champs School - منصة تعليمية متقدمة",
+    description:
+      "منصة تعليمية متقدمة تجمع بين التكنولوجيا الحديثة وأساليب التعلم المبتكرة",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Z.ai Code Scaffold",
-    description: "AI-powered development with modern React stack",
+    locale: "ar_DZ",
+    alternateLocale: ["en_US", "fr_DZ"],
   },
 };
 
@@ -41,12 +40,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="ar" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className="bg-background font-sans text-foreground antialiased"
       >
         {children}
-        <Toaster />
+        <Toaster richColors position="top-center" dir="auto" />
       </body>
     </html>
   );

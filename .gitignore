@@ -66,3 +66,5 @@ server.log
 /upload/
 /download/
 /public/uploads/
+
+.vercel

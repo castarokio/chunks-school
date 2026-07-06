@@ -45,8 +45,8 @@ const panels: AccordionPanel[] = [
 export default function AttractionsAccordion() {
   const [active, setActive] = useState(4);
   const displayFont = '"Chunks Accordion", "Arial Narrow", Arial, sans-serif';
-  const activeBasis = 'clamp(520px, 31.5vw, 620px)';
-  const railBasis = 'clamp(76px, calc((100vw - clamp(520px, 31.5vw, 620px)) / 10), 128px)';
+  const activeBasis = 'clamp(360px, 31.5vw, 620px)';
+  const railBasis = 'clamp(68px, calc((100vw - clamp(360px, 31.5vw, 620px)) / 10), 128px)';
 
   return (
     <section id="attractions" className="bg-[#F0E7D4] text-[#282B28]" aria-labelledby="attractions-title">
@@ -59,7 +59,7 @@ export default function AttractionsAccordion() {
           Attractions
         </h2>
 
-        <div className="hidden h-[590px] w-full overflow-hidden xl:flex">
+        <div className="flex h-[520px] w-full overflow-x-auto overflow-y-hidden md:h-[590px]">
           {panels.map((panel, index) => {
             const isActive = active === index;
 
@@ -84,7 +84,7 @@ export default function AttractionsAccordion() {
                 <div className="grid h-full" style={{ gridTemplateColumns: `${railBasis} 1fr` }}>
                   <div className="relative h-full overflow-hidden">
                     <span
-                      className="absolute left-1/2 top-7 block origin-center -translate-x-1/2 whitespace-nowrap text-[clamp(4.25rem,5.55vw,7.35rem)] leading-none"
+                      className="absolute left-1/2 top-7 block origin-center -translate-x-1/2 whitespace-nowrap text-[clamp(3.55rem,5.55vw,7.35rem)] leading-none"
                       style={{
                         fontWeight: panel.weight,
                         transform: 'translateX(-50%) rotate(-90deg)',
@@ -93,8 +93,8 @@ export default function AttractionsAccordion() {
                       {panel.label}
                     </span>
                     <span
-                      className={`absolute bottom-[6.15rem] max-w-[4.65rem] text-[0.58rem] font-extrabold uppercase leading-[0.98] ${
-                        panel.number.length > 1 ? 'left-2.5' : 'left-4'
+                      className={`absolute bottom-[5.65rem] max-w-[4.65rem] text-[0.54rem] font-extrabold uppercase leading-[0.98] md:bottom-[6.15rem] md:text-[0.58rem] ${
+                        panel.number.length > 1 ? 'left-2' : 'left-3 md:left-4'
                       }`}
                     >
                       {panel.kicker}
@@ -102,8 +102,8 @@ export default function AttractionsAccordion() {
                     <span
                       className={`absolute bottom-6 font-extrabold leading-none ${
                         panel.number.length > 1
-                          ? 'left-2 text-[clamp(3.45rem,4.4vw,6.6rem)]'
-                          : 'left-4 text-[clamp(4.8rem,5.7vw,8.7rem)]'
+                          ? 'left-1.5 text-[clamp(3.1rem,4.4vw,6.6rem)] md:left-2'
+                          : 'left-3 text-[clamp(4.15rem,5.7vw,8.7rem)] md:left-4'
                       }`}
                       style={{ fontFeatureSettings: '"tnum"' }}
                     >
@@ -124,45 +124,6 @@ export default function AttractionsAccordion() {
                     <p className="mt-20 max-w-[430px] text-[clamp(1.28rem,1.42vw,1.72rem)] font-light leading-[1.08]">
                       {panel.body}
                     </p>
-                  </div>
-                </div>
-              </button>
-            );
-          })}
-        </div>
-
-        <div className="grid gap-3 px-4 xl:hidden">
-          {panels.map((panel, index) => {
-            const isActive = active === index;
-
-            return (
-              <button
-                key={panel.number}
-                type="button"
-                aria-label={`${panel.number}. ${panel.kicker}: ${panel.title}`}
-                aria-expanded={isActive}
-                onClick={() => setActive(index)}
-                onFocus={() => setActive(index)}
-                className="overflow-hidden rounded-none text-left text-[#282B28] outline-none focus-visible:ring-2 focus-visible:ring-[#282B28]"
-                style={{ backgroundColor: panel.color, fontFamily: displayFont }}
-              >
-                <div className="flex min-h-28 items-center gap-5 px-5">
-                  <span className={`${panel.number.length > 1 ? 'text-6xl' : 'text-7xl'} font-extrabold leading-none`}>
-                    {panel.number}
-                  </span>
-                  <span className="grid gap-1">
-                    <span className="text-xs font-extrabold uppercase leading-none">{panel.kicker}</span>
-                    <span className="text-5xl leading-none" style={{ fontWeight: panel.weight }}>
-                      {panel.label}
-                    </span>
-                  </span>
-                </div>
-                <div className={`grid transition-[grid-template-rows] duration-500 ${isActive ? 'grid-rows-[1fr]' : 'grid-rows-[0fr]'}`}>
-                  <div className="overflow-hidden">
-                    <div className="border-t border-[#282B28] px-5 pb-6 pt-5">
-                      <h3 className="text-5xl font-light leading-none">{panel.title}</h3>
-                      <p className="mt-5 text-xl font-light leading-[1.1]">{panel.body}</p>
-                    </div>
                   </div>
                 </div>
               </button>

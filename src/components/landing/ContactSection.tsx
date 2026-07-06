@@ -36,9 +36,9 @@ const contactInfo = [
     titleAr: 'البريد الإلكتروني',
     titleEn: 'Email',
     titleFr: 'Email',
-    valueAr: 'info@champs.dz',
-    valueEn: 'info@champs.dz',
-    valueFr: 'info@champs.dz',
+    valueAr: 'info@chunks.school',
+    valueEn: 'info@chunks.school',
+    valueFr: 'info@chunks.school',
     color: 'from-blue-400 to-cyan-500',
   },
   {

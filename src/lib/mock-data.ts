@@ -1,11 +1,11 @@
 import type { Course, Enrollment, Skill, GamificationData, Notification, AuthUser, DashboardStats } from './types';
 
 export const mockUsers: Record<string, AuthUser> = {
-  student: { id: 's1', email: 'student@champs.dz', name: 'أحمد محمد', role: 'student', language: 'ar', twoFactorEnabled: false, avatar: '' },
-  teacher: { id: 't1', email: 'teacher@champs.dz', name: 'سارة علي', role: 'teacher', language: 'ar', twoFactorEnabled: true, avatar: '' },
-  parent: { id: 'p1', email: 'parent@champs.dz', name: 'محمد كريم', role: 'parent', language: 'ar', twoFactorEnabled: false, avatar: '' },
-  admin: { id: 'a1', email: 'admin@champs.dz', name: 'ليلى حسن', role: 'admin', language: 'ar', twoFactorEnabled: true, avatar: '' },
-  owner: { id: 'o1', email: 'owner@champs.dz', name: 'يوسف مالك', role: 'owner', language: 'ar', twoFactorEnabled: true, avatar: '' },
+  student: { id: 's1', email: 'student@chunks.school', name: 'أحمد محمد', role: 'student', language: 'ar', twoFactorEnabled: false, avatar: '' },
+  teacher: { id: 't1', email: 'teacher@chunks.school', name: 'سارة علي', role: 'teacher', language: 'ar', twoFactorEnabled: true, avatar: '' },
+  parent: { id: 'p1', email: 'parent@chunks.school', name: 'محمد كريم', role: 'parent', language: 'ar', twoFactorEnabled: false, avatar: '' },
+  admin: { id: 'a1', email: 'admin@chunks.school', name: 'ليلى حسن', role: 'admin', language: 'ar', twoFactorEnabled: true, avatar: '' },
+  owner: { id: 'o1', email: 'owner@chunks.school', name: 'يوسف مالك', role: 'owner', language: 'ar', twoFactorEnabled: true, avatar: '' },
 };
 
 export const mockCourses: Course[] = [
@@ -39,7 +39,7 @@ export const mockGamification: GamificationData = {
 };
 
 export const mockNotifications: Notification[] = [
-  { id: 'n1', userId: 's1', title: 'مرحباً بك!', message: 'تم تسجيلك بنجاح في منصة تشامبس سكول', type: 'success', isRead: false, createdAt: new Date().toISOString() },
+  { id: 'n1', userId: 's1', title: 'مرحباً بك!', message: 'تم تسجيلك بنجاح في منصة تشانكس سكول', type: 'success', isRead: false, createdAt: new Date().toISOString() },
   { id: 'n2', userId: 's1', title: 'شارة جديدة!', message: 'حصلت على شارة "حضور متميز" 🏆', type: 'achievement', isRead: false, createdAt: new Date(Date.now() - 3600000).toISOString() },
   { id: 'n3', userId: 's1', title: 'تذكير بالحضور', message: 'حصة الإنجليزية غداً الساعة 9:00', type: 'info', isRead: true, createdAt: new Date(Date.now() - 7200000).toISOString() },
   { id: 'n4', userId: 's1', title: 'اقتراح ذكي', message: 'بناءً على تقدمك، ننصحك بدورة الفرنسية المتوسطة', type: 'info', isRead: false, createdAt: new Date(Date.now() - 86400000).toISOString() },
@@ -122,7 +122,7 @@ export const mockTestimonials = [
 
 // Extended notifications for StudentNotifications component
 export const mockExtendedNotifications: Notification[] = [
-  { id: 'n1', userId: 's1', title: 'مرحباً بك!', message: 'تم تسجيلك بنجاح في منصة تشامبس سكول', type: 'success', isRead: false, createdAt: new Date().toISOString() },
+  { id: 'n1', userId: 's1', title: 'مرحباً بك!', message: 'تم تسجيلك بنجاح في منصة تشانكس سكول', type: 'success', isRead: false, createdAt: new Date().toISOString() },
   { id: 'n2', userId: 's1', title: 'شارة جديدة!', message: 'حصلت على شارة "حضور متميز" 🏆', type: 'achievement', isRead: false, createdAt: new Date(Date.now() - 3600000).toISOString() },
   { id: 'n3', userId: 's1', title: 'تذكير بالحضور', message: 'حصة الإنجليزية غداً الساعة 9:00', type: 'info', isRead: true, createdAt: new Date(Date.now() - 7200000).toISOString() },
   { id: 'n4', userId: 's1', title: 'اقتراح ذكي', message: 'بناءً على تقدمك، ننصحك بدورة الفرنسية المتوسطة', type: 'info', isRead: false, createdAt: new Date(Date.now() - 86400000).toISOString() },
@@ -228,14 +228,14 @@ export const mockApprovalQueue = [
 
 // Admin mock data
 export const mockAdminUsers = [
-  { id: 'u1', name: 'أحمد محمد', email: 'ahmed@champs.dz', role: 'student' as const, status: 'active', joinedAt: '2025-09-01' },
-  { id: 'u2', name: 'سارة علي', email: 'sara@champs.dz', role: 'teacher' as const, status: 'active', joinedAt: '2025-08-15' },
-  { id: 'u3', name: 'محمد كريم', email: 'karim@champs.dz', role: 'parent' as const, status: 'active', joinedAt: '2025-09-10' },
-  { id: 'u4', name: 'ليلى حسن', email: 'layla@champs.dz', role: 'admin' as const, status: 'active', joinedAt: '2025-07-01' },
-  { id: 'u5', name: 'يوسف مالك', email: 'youssef@champs.dz', role: 'owner' as const, status: 'active', joinedAt: '2025-01-01' },
-  { id: 'u6', name: 'فاطمة علي', email: 'fatima@champs.dz', role: 'student' as const, status: 'active', joinedAt: '2025-09-05' },
-  { id: 'u7', name: 'خالد إبراهيم', email: 'khaled@champs.dz', role: 'teacher' as const, status: 'inactive', joinedAt: '2025-10-01' },
-  { id: 'u8', name: 'مريم سعيد', email: 'maryam@champs.dz', role: 'student' as const, status: 'active', joinedAt: '2025-09-15' },
+  { id: 'u1', name: 'أحمد محمد', email: 'ahmed@chunks.school', role: 'student' as const, status: 'active', joinedAt: '2025-09-01' },
+  { id: 'u2', name: 'سارة علي', email: 'sara@chunks.school', role: 'teacher' as const, status: 'active', joinedAt: '2025-08-15' },
+  { id: 'u3', name: 'محمد كريم', email: 'karim@chunks.school', role: 'parent' as const, status: 'active', joinedAt: '2025-09-10' },
+  { id: 'u4', name: 'ليلى حسن', email: 'layla@chunks.school', role: 'admin' as const, status: 'active', joinedAt: '2025-07-01' },
+  { id: 'u5', name: 'يوسف مالك', email: 'youssef@chunks.school', role: 'owner' as const, status: 'active', joinedAt: '2025-01-01' },
+  { id: 'u6', name: 'فاطمة علي', email: 'fatima@chunks.school', role: 'student' as const, status: 'active', joinedAt: '2025-09-05' },
+  { id: 'u7', name: 'خالد إبراهيم', email: 'khaled@chunks.school', role: 'teacher' as const, status: 'inactive', joinedAt: '2025-10-01' },
+  { id: 'u8', name: 'مريم سعيد', email: 'maryam@chunks.school', role: 'student' as const, status: 'active', joinedAt: '2025-09-15' },
 ];
 
 export const mockAdminPayments = [

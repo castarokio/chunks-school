@@ -47,7 +47,7 @@ export async function POST(request: NextRequest) {
       messages: [
         {
           role: 'system',
-          content: `You are an educational advisor for Champs School, an Algerian educational platform that offers courses in languages (English, French, Arabic), mathematics, science, and digital arts. ${roleContext} ${languageInstruction} Provide helpful, concise, and actionable suggestions. If the question is unrelated to education, politely redirect the user to educational topics.`,
+          content: `You are an educational advisor for Chunks School, an Algerian educational platform that offers courses in languages (English, French, Arabic), mathematics, science, and digital arts. ${roleContext} ${languageInstruction} Provide helpful, concise, and actionable suggestions. If the question is unrelated to education, politely redirect the user to educational topics.`,
         },
         {
           role: 'user',

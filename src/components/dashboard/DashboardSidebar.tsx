@@ -27,7 +27,6 @@ import { Separator } from '@/components/ui/separator';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
 import { Badge } from '@/components/ui/badge';
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
-import Image from 'next/image';
 
 interface MenuItem {
   id: DashboardTab;
@@ -125,8 +124,8 @@ function SidebarContent({
     <div className="flex h-full flex-col bg-sidebar text-sidebar-foreground">
       {/* Logo */}
       <div className="flex items-center gap-3 p-4">
-        <div className="relative w-10 h-10 shrink-0">
-          <Image src="/champs-logo.png" alt="Champs School" fill className="object-contain" />
+        <div className="grid size-11 shrink-0 place-items-center rounded-full border-4 border-white bg-primary text-xs font-black uppercase text-primary-foreground shadow-[0_10px_24px_rgba(239,35,42,0.28)]">
+          CH
         </div>
         <AnimatePresence>
           {!collapsed && (
@@ -136,9 +135,10 @@ function SidebarContent({
               exit={{ opacity: 0, width: 0 }}
               className="overflow-hidden whitespace-nowrap"
             >
-              <h1 className="text-lg font-black text-accent" translate="no">
-                Champs School
+              <h1 className="font-[Impact,'Arial_Narrow',sans-serif] text-2xl font-black uppercase leading-none text-white" translate="no">
+                Chunks School
               </h1>
+              <p className="text-[0.62rem] font-black uppercase tracking-normal text-white/45">Learning Portal</p>
             </motion.div>
           )}
         </AnimatePresence>
@@ -161,7 +161,7 @@ function SidebarContent({
                 }}
                 className={`group relative flex min-h-11 w-full items-center gap-3 rounded-md px-3 py-2.5 text-sm font-bold transition-[background-color,color,transform] duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sidebar-ring ${
                   isActive
-                    ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-black/15'
+                    ? 'bg-sidebar-primary text-sidebar-primary-foreground shadow-lg shadow-[#ef232a]/20'
                     : 'text-sidebar-foreground/75 hover:bg-sidebar-accent hover:text-sidebar-accent-foreground'
                 }`}
                 whileHover={{ x: rtl ? -4 : 4 }}
@@ -188,7 +188,7 @@ function SidebarContent({
                   )}
                 </AnimatePresence>
                 {menuItem.id === 'notifications' && unreadCount > 0 && (
-                  <Badge className="relative z-10 ml-auto flex h-5 min-w-5 items-center justify-center bg-accent text-xs text-accent-foreground">
+                  <Badge className="relative z-10 ml-auto flex h-5 min-w-5 items-center justify-center bg-white text-xs text-[#111]">
                     {unreadCount}
                   </Badge>
                 )}
@@ -204,7 +204,7 @@ function SidebarContent({
       <div className="p-3">
         <div className="flex items-center gap-3 rounded-md bg-sidebar-accent p-2">
           <Avatar className="size-9 border border-sidebar-border">
-            <AvatarFallback className="bg-accent text-sm font-black text-accent-foreground">
+            <AvatarFallback className="bg-primary text-sm font-black text-primary-foreground">
               {user?.name?.charAt(0) || 'U'}
             </AvatarFallback>
           </Avatar>
@@ -228,7 +228,7 @@ function SidebarContent({
                   variant="ghost"
                   size="icon"
                   onClick={logout}
-                  className="size-9 text-sidebar-foreground/70 hover:bg-destructive/10 hover:text-destructive"
+                  className="size-9 text-sidebar-foreground/70 hover:bg-primary/15 hover:text-white"
                   aria-label="Logout"
                 >
                   <LogOut className="size-4" aria-hidden="true" />
@@ -275,7 +275,7 @@ export default function DashboardSidebar() {
           variant="ghost"
           size="icon"
           onClick={() => setSidebarOpen(!sidebarOpen)}
-          className={`absolute top-1/2 z-40 size-8 -translate-y-1/2 rounded-full bg-accent text-accent-foreground shadow-lg hover:bg-accent/90 ${rtl ? '-right-3' : '-left-3'}`}
+          className={`absolute top-1/2 z-40 size-8 -translate-y-1/2 rounded-full bg-primary text-primary-foreground shadow-lg hover:bg-primary/90 ${rtl ? '-right-3' : '-left-3'}`}
           aria-label={sidebarOpen ? 'Collapse Sidebar' : 'Expand Sidebar'}
         >
           {sidebarOpen ? (

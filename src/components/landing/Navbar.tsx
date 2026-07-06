@@ -67,7 +67,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2">
             <Image
               src="/champs-logo.png"
-              alt="Champs School"
+              alt="Chunks School"
               width={40}
               height={40}
               loading="eager"
@@ -82,7 +82,7 @@ export default function Navbar() {
               } transition-colors`}
               translate="no"
             >
-              Champs School
+              Chunks School
             </span>
           </div>
 
@@ -167,14 +167,14 @@ export default function Navbar() {
                     <div className="flex items-center gap-2 px-2">
                       <Image
                         src="/champs-logo.png"
-                        alt="Champs School"
+                        alt="Chunks School"
                         width={36}
                         height={36}
                         sizes="36px"
                         className="size-9 object-contain"
                       />
                       <span className="text-lg font-black text-primary" translate="no">
-                        Champs School
+                        Chunks School
                       </span>
                     </div>
 

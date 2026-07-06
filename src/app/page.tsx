@@ -100,9 +100,9 @@ function DashboardView() {
   const rtl = isRTL(language);
 
   return (
-    <div className="flex min-h-screen overflow-x-hidden bg-background" dir={rtl ? 'rtl' : 'ltr'}>
+    <div className="chunks-dashboard flex min-h-screen overflow-x-hidden bg-background" dir={rtl ? 'rtl' : 'ltr'}>
       <DashboardSidebar />
-      <div className="brand-shell flex min-w-0 flex-1 flex-col">
+      <div className="chunks-dashboard-shell flex min-w-0 flex-1 flex-col">
         <DashboardHeader />
         <main className="flex-1 overflow-auto p-4 md:p-6">
           <DashboardContent />

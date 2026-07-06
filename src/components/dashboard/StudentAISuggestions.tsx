@@ -34,8 +34,8 @@ export default function StudentAISuggestions() {
       id: '1',
       role: 'assistant',
       content: language === 'ar'
-        ? 'مرحباً! أنا مساعدك الذكي في تشامبس سكول. يمكنني مساعدتك في اختيار الدورات، وضع خطط دراسية، وتحليل أدائك. كيف يمكنني مساعدتك اليوم؟'
-        : 'Hello! I\'m your AI assistant at Champs School. I can help you choose courses, create study plans, and analyze your performance. How can I help you today?',
+        ? 'مرحباً! أنا مساعدك الذكي في تشانكس سكول. يمكنني مساعدتك في اختيار الدورات، وضع خطط دراسية، وتحليل أدائك. كيف يمكنني مساعدتك اليوم؟'
+        : 'Hello! I\'m your AI assistant at Chunks School. I can help you choose courses, create study plans, and analyze your performance. How can I help you today?',
       timestamp: new Date(),
     },
   ]);

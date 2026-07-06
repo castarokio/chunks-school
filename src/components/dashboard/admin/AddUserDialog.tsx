@@ -65,7 +65,7 @@ export function AddUserDialog({
               type="email"
               value={newUser.email}
               onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
-              placeholder="email@champs.dz"
+              placeholder="email@chunks.school"
             />
           </div>
           <div className="space-y-2">
@@ -108,7 +108,7 @@ export function AddUserDialog({
             {t('common.cancel', language)}
           </Button>
           <Button
-            className="bg-emerald-600 hover:bg-emerald-700 text-white"
+            className="bg-primary text-primary-foreground hover:bg-[#d91d24]"
             disabled={submitting}
             onClick={async () => {
               if (!newUser.name || !newUser.email || !newUser.password) {

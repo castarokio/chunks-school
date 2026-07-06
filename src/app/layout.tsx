@@ -3,12 +3,12 @@ import "./globals.css";
 import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
-  title: "Champs School - تشامبس سكول | منصة تعليمية متقدمة",
+  title: "Chunks School | منصة تعليمية متقدمة",
   description:
     "منصة تعليمية متقدمة تجمع بين التكنولوجيا الحديثة وأساليب التعلم المبتكرة. An advanced educational platform combining modern technology and innovative learning methods. Plateforme éducative avancée combinant technologie moderne et méthodes d'apprentissage innovantes.",
   keywords: [
-    "Champs School",
-    "تشامبس سكول",
+    "Chunks School",
+    "تشانكس سكول",
     "تعليم",
     "education",
     "الجزائر",
@@ -20,12 +20,12 @@ export const metadata: Metadata = {
     "تعلم الكتروني",
     "e-learning",
   ],
-  authors: [{ name: "Champs School" }],
+  authors: [{ name: "Chunks School" }],
   icons: {
     icon: "/champs-logo.png",
   },
   openGraph: {
-    title: "Champs School - منصة تعليمية متقدمة",
+    title: "Chunks School - منصة تعليمية متقدمة",
     description:
       "منصة تعليمية متقدمة تجمع بين التكنولوجيا الحديثة وأساليب التعلم المبتكرة",
     type: "website",

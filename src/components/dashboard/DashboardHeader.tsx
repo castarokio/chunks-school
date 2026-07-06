@@ -85,15 +85,15 @@ export default function DashboardHeader() {
     <motion.header
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      className="sticky top-0 z-20 border-b border-border/70 bg-background/86 backdrop-blur-xl"
+      className="sticky top-0 z-20 border-b border-border/70 bg-[#f4f1ee]/88 backdrop-blur-xl dark:bg-[#111]/88"
     >
-      <div className="flex items-center justify-between h-16 px-4 gap-3">
+      <div className="flex h-16 items-center justify-between gap-3 px-4">
         {/* Left: Mobile menu + Breadcrumb */}
         <div className="flex items-center gap-3 min-w-0">
           <Button
             variant="ghost"
             size="icon"
-            className="lg:hidden shrink-0"
+            className="shrink-0 rounded-full hover:bg-white lg:hidden"
             onClick={() => setSidebarOpen(true)}
             aria-label="Open Dashboard Navigation"
           >
@@ -103,20 +103,20 @@ export default function DashboardHeader() {
           <Breadcrumb className="hidden sm:flex">
             <BreadcrumbList>
               <BreadcrumbItem>
-                <BreadcrumbLink className="text-primary">
+                <BreadcrumbLink className="font-black uppercase text-primary">
                   {t('nav.dashboard', language)}
                 </BreadcrumbLink>
               </BreadcrumbItem>
               <BreadcrumbSeparator />
               <BreadcrumbItem>
-                <BreadcrumbPage className="font-medium">
+                <BreadcrumbPage className="font-[Impact,'Arial_Narrow',sans-serif] text-xl uppercase tracking-normal text-[#111] dark:text-[#f4f1ee]">
                   {t(tabLabelMap[dashboardTab] || 'dashboard.overview', language)}
                 </BreadcrumbPage>
               </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
 
-          <span className="sm:hidden text-sm font-medium truncate">
+          <span className="truncate font-[Impact,'Arial_Narrow',sans-serif] text-xl uppercase sm:hidden">
             {t(tabLabelMap[dashboardTab] || 'dashboard.overview', language)}
           </span>
         </div>
@@ -128,7 +128,7 @@ export default function DashboardHeader() {
             <Input
               placeholder={t('common.search', language)}
               aria-label={t('common.search', language)}
-              className={`${rtl ? 'pr-10 pl-4' : 'pl-10 pr-4'} h-10 rounded-full border-border bg-card/75`}
+              className={`${rtl ? 'pr-10 pl-4' : 'pl-10 pr-4'} h-10 rounded-full border-border bg-white/85 font-bold shadow-[0_8px_24px_rgba(17,17,17,0.05)] dark:bg-[#1a1a1a]/85`}
             />
           </div>
         </div>
@@ -136,14 +136,14 @@ export default function DashboardHeader() {
         {/* Right: Actions */}
         <div className="flex items-center gap-1.5">
           {/* Search on mobile */}
-          <Button variant="ghost" size="icon" className="md:hidden" aria-label="Search">
+          <Button variant="ghost" size="icon" className="rounded-full hover:bg-white md:hidden" aria-label="Search">
             <Search className="size-4" aria-hidden="true" />
           </Button>
 
           {/* Language Switcher */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="relative" aria-label="Change Language">
+              <Button variant="ghost" size="icon" className="relative rounded-full hover:bg-white dark:hover:bg-[#242424]" aria-label="Change Language">
                 <Globe className="size-4" aria-hidden="true" />
               </Button>
             </DropdownMenuTrigger>
@@ -152,7 +152,7 @@ export default function DashboardHeader() {
                 <DropdownMenuItem
                   key={lang.code}
                   onClick={() => setLanguage(lang.code)}
-                  className={language === lang.code ? 'bg-secondary' : ''}
+                  className={language === lang.code ? 'bg-primary/10' : ''}
                 >
                   <span className={language === lang.code ? 'font-bold text-primary' : ''}>
                     {lang.label}
@@ -163,19 +163,19 @@ export default function DashboardHeader() {
           </DropdownMenu>
 
           {/* Dark Mode Toggle */}
-          <Button variant="ghost" size="icon" onClick={toggleDark} aria-label="Toggle Theme">
+          <Button variant="ghost" size="icon" className="rounded-full hover:bg-white dark:hover:bg-[#242424]" onClick={toggleDark} aria-label="Toggle Theme">
             <motion.div
               key={isDark ? 'dark' : 'light'}
               initial={{ rotate: -90, opacity: 0 }}
               animate={{ rotate: 0, opacity: 1 }}
               transition={{ duration: 0.3 }}
             >
-              {isDark ? <Sun className="size-4 text-accent" aria-hidden="true" /> : <Moon className="size-4" aria-hidden="true" />}
+              {isDark ? <Sun className="size-4 text-primary" aria-hidden="true" /> : <Moon className="size-4" aria-hidden="true" />}
             </motion.div>
           </Button>
 
           {/* Sound Toggle */}
-          <Button variant="ghost" size="icon" onClick={toggleSound} aria-label="Toggle Sound">
+          <Button variant="ghost" size="icon" className="rounded-full hover:bg-white dark:hover:bg-[#242424]" onClick={toggleSound} aria-label="Toggle Sound">
             {soundEnabled ? (
               <Volume2 className="size-4" aria-hidden="true" />
             ) : (
@@ -186,13 +186,13 @@ export default function DashboardHeader() {
           {/* Notifications */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" size="icon" className="relative" aria-label="Open Notifications">
+              <Button variant="ghost" size="icon" className="relative rounded-full hover:bg-white dark:hover:bg-[#242424]" aria-label="Open Notifications">
                 <Bell className="size-4" aria-hidden="true" />
                 {unreadCount > 0 && (
                   <motion.span
                     initial={{ scale: 0 }}
                     animate={{ scale: 1 }}
-                    className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-accent text-[10px] font-black text-accent-foreground"
+                    className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-primary text-[10px] font-black text-primary-foreground"
                   >
                     {unreadCount}
                   </motion.span>
@@ -209,7 +209,7 @@ export default function DashboardHeader() {
                 <DropdownMenuItem
                   key={n.id}
                   onClick={() => markNotificationRead(n.id)}
-                  className={`flex flex-col items-start gap-1 p-3 ${!n.isRead ? 'bg-secondary' : ''}`}
+                  className={`flex flex-col items-start gap-1 p-3 ${!n.isRead ? 'bg-primary/10' : ''}`}
                 >
                   <span className="text-sm font-medium">{n.title}</span>
                   <span className="text-xs text-muted-foreground line-clamp-1">{n.message}</span>
@@ -226,9 +226,9 @@ export default function DashboardHeader() {
           {/* User Avatar */}
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="gap-2 px-2 h-9">
+              <Button variant="ghost" className="h-10 gap-2 rounded-full bg-white/70 px-2 hover:bg-white dark:bg-[#1a1a1a]/70 dark:hover:bg-[#242424]">
                 <Avatar className="size-8 border border-border">
-                  <AvatarFallback className="bg-primary text-xs text-primary-foreground">
+                  <AvatarFallback className="bg-primary text-xs font-black text-primary-foreground">
                     {user?.name?.charAt(0) || 'U'}
                   </AvatarFallback>
                 </Avatar>

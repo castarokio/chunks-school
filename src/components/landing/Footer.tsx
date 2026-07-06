@@ -49,13 +49,13 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <Image
                 src="/champs-logo.png"
-                alt="Champs School"
+                alt="Chunks School"
                 width={40}
                 height={40}
                 sizes="40px"
                 className="size-10 object-contain"
               />
-              <span className="text-xl font-black" translate="no">Champs School</span>
+              <span className="text-xl font-black" translate="no">Chunks School</span>
             </div>
             <p className="mb-6 text-sm leading-7 text-primary-foreground/70">
               {language === 'ar'
@@ -143,7 +143,7 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3 text-sm text-primary-foreground/70">
                 <Mail className="size-4 shrink-0 text-accent" aria-hidden="true" />
-                <span>info@champs-school.dz</span>
+                <span>info@chunks.school</span>
               </li>
             </ul>
           </div>
@@ -154,7 +154,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="flex flex-col items-center justify-between gap-4 text-sm text-primary-foreground/55 sm:flex-row">
           <p>
-            &copy; {new Date().getFullYear()} Champs School. {t('footer.rights', language)}
+            &copy; {new Date().getFullYear()} Chunks School. {t('footer.rights', language)}
           </p>
           <div className="flex gap-4">
             <a href="#" className="transition-colors hover:text-accent">

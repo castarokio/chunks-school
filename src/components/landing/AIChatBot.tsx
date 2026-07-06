@@ -38,10 +38,10 @@ export default function AIChatBot() {
       role: 'assistant',
       content:
         language === 'ar'
-          ? 'مرحباً! أنا مساعد تشامبس سكول الذكي. كيف يمكنني مساعدتك اليوم؟'
+          ? 'مرحباً! أنا مساعد تشانكس سكول الذكي. كيف يمكنني مساعدتك اليوم؟'
           : language === 'fr'
-            ? 'Bonjour! Je suis l\'assistant intelligent de Champs School. Comment puis-je vous aider aujourd\'hui?'
-            : 'Hello! I\'m the Champs School AI assistant. How can I help you today?',
+            ? 'Bonjour! Je suis l\'assistant intelligent de Chunks School. Comment puis-je vous aider aujourd\'hui?'
+            : 'Hello! I\'m the Chunks School AI assistant. How can I help you today?',
       timestamp: new Date(),
     },
   ]);
@@ -153,7 +153,7 @@ export default function AIChatBot() {
               whileTap={{ scale: 0.96 }}
               onClick={() => setChatOpen(true)}
               className="relative flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground shadow-[0_10px_24px_rgba(16,42,67,0.18)] transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-              aria-label="Open Champs Assistant"
+              aria-label="Open Chunks Assistant"
             >
               <MessageCircle className="size-6" aria-hidden="true" />
               <span className="absolute -right-0.5 -top-0.5 size-4 rounded-full border-2 border-primary bg-accent" />
@@ -182,7 +182,7 @@ export default function AIChatBot() {
                   </div>
                   <div>
                     <p className="text-sm font-bold">
-                      {language === 'ar' ? 'مساعد تشامبس' : language === 'fr' ? 'Assistant Champs' : 'Champs Assistant'}
+                      {language === 'ar' ? 'مساعد تشانكس' : language === 'fr' ? 'Assistant Chunks' : 'Chunks Assistant'}
                     </p>
                     <p className="text-xs text-primary-foreground/70">
                       {isTyping
@@ -194,7 +194,7 @@ export default function AIChatBot() {
                 <button
                   onClick={() => setChatOpen(false)}
                   className="flex size-9 items-center justify-center rounded-full bg-primary-foreground/10 transition-colors hover:bg-primary-foreground/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
-                  aria-label="Close Champs Assistant"
+                  aria-label="Close Chunks Assistant"
                 >
                   <X className="size-4" aria-hidden="true" />
                 </button>

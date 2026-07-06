@@ -17,6 +17,7 @@ import {
   UsersRound,
 } from 'lucide-react';
 import { useAppStore } from '@/lib/store';
+import AttractionsAccordion from './AttractionsAccordion';
 
 const image = (id: string, w = 1200, h = 900) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${w}&h=${h}&q=82`;
 
@@ -207,6 +208,8 @@ export default function ReferenceHomePage() {
             </div>
           </div>
         </section>
+
+        <AttractionsAccordion />
 
         <section id="admission" className="px-6 py-24 md:px-12 lg:py-32">
           <div className="mx-auto max-w-[1160px]">

@@ -5,15 +5,7 @@ import { useAppStore } from '@/lib/store';
 import { isRTL } from '@/lib/i18n';
 
 // Landing
-import Navbar from '@/components/landing/Navbar';
-import HeroSection from '@/components/landing/HeroSection';
-import FeaturesSection from '@/components/landing/FeaturesSection';
-import CourseCardsSection from '@/components/landing/CourseCardsSection';
-import TestimonialsSection from '@/components/landing/TestimonialsSection';
-import ProcessSection from '@/components/landing/ProcessSection';
-import ContactSection from '@/components/landing/ContactSection';
-import Footer from '@/components/landing/Footer';
-import AIChatBot from '@/components/landing/AIChatBot';
+import ReferenceHomePage from '@/components/landing/ReferenceHomePage';
 
 // Auth
 import AuthPage from '@/components/auth/AuthPage';
@@ -39,19 +31,7 @@ import DashboardSettings from '@/components/dashboard/DashboardSettings';
 
 // Landing Page View
 function LandingView() {
-  return (
-    <div className="flex min-h-screen flex-col overflow-x-hidden bg-background">
-      <Navbar />
-      <main className="flex-1">
-        <div id="home"><HeroSection /></div>
-        <div id="courses"><FeaturesSection /><CourseCardsSection /></div>
-        <div id="about"><TestimonialsSection /><ProcessSection /></div>
-        <div id="contact"><ContactSection /></div>
-      </main>
-      <Footer />
-      <AIChatBot />
-    </div>
-  );
+  return <ReferenceHomePage />;
 }
 
 // Dashboard Content Router
